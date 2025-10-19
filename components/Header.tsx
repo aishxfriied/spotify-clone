@@ -2,7 +2,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Search, Bell, Users, User } from 'lucide-react';
+import { Search, Bell, Users, User, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/context/ThemeContext';
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -103,11 +104,21 @@ const IconButton = styled.button`
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
+  transition: all 0.2s ease;
   
   &:hover {
     color: white;
     background-color: #333;
   }
+
+  &:focus {
+    outline: 2px solid #1db954;
+    outline-offset: 2px;
+  }
+`;
+
+const ThemeToggle = styled(IconButton)`
+  color: ${props => props.theme?.colors?.accent || '#1db954'};
 `;
 
 const ProfilePic = styled.div`
@@ -126,21 +137,23 @@ const ProfilePic = styled.div`
 `;
 
 export default function Header() {
+  const { isDark, toggleTheme } = useTheme();
+
   return (
     <HeaderContainer>
       <NavSection>
-        <HamburgerButton>
+        <HamburgerButton aria-label="Menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </HamburgerButton>
         <NavArrows>
-          <ArrowButton>
+          <ArrowButton aria-label="Go back">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </ArrowButton>
-          <ArrowButton>
+          <ArrowButton aria-label="Go forward">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -151,20 +164,29 @@ export default function Header() {
       <SearchContainer>
         <SearchBar>
           <Search size={20} color="#666" />
-          <SearchInput placeholder="What do you want to play?" />
+          <SearchInput 
+            placeholder="What do you want to play?" 
+            aria-label="Search for music"
+          />
         </SearchBar>
       </SearchContainer>
       
       <HeaderRight>
         <HeaderIcons>
-          <IconButton>
+          <ThemeToggle 
+            onClick={toggleTheme}
+            aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+          >
+            {isDark ? <Sun size={24} /> : <Moon size={24} />}
+          </ThemeToggle>
+          <IconButton aria-label="Notifications">
             <Bell size={24} />
           </IconButton>
-          <IconButton>
+          <IconButton aria-label="Friends">
             <Users size={24} />
           </IconButton>
         </HeaderIcons>
-        <ProfilePic>
+        <ProfilePic aria-label="Profile">
           <User size={20} />
         </ProfilePic>
       </HeaderRight>

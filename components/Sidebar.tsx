@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
-import { Home, Search, Music, ChevronDown } from 'lucide-react';
+import { Home, Search, Music, ChevronDown, User } from 'lucide-react';
 import { mockPlaylists } from '@/data/mockData';
 import PlaylistItem from './PlaylistItem';
 
@@ -38,7 +40,7 @@ const NavList = styled.ul`
   margin: 0;
 `;
 
-const NavItem = styled.li`
+const NavItem = styled.li<{ active?: boolean }>`
   display: flex;
   align-items: center;
   gap: 15px;
@@ -47,10 +49,20 @@ const NavItem = styled.li`
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.2s ease;
+  color: ${props => props.active ? 'white' : '#b3b3b3'};
   
   &:hover {
     color: white;
   }
+`;
+
+const NavLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
 `;
 
 const LibrarySection = styled.div`
@@ -180,6 +192,8 @@ const FooterLink = styled.a`
 `;
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <SidebarContainer>
       <Logo>
@@ -188,13 +202,23 @@ export default function Sidebar() {
       
       <Navigation>
         <NavList>
-          <NavItem>
-            <Home size={24} />
-            Home
+          <NavItem active={pathname === '/'}>
+            <NavLink href="/">
+              <Home size={24} />
+              Home
+            </NavLink>
           </NavItem>
-          <NavItem>
-            <Search size={24} />
-            Search
+          <NavItem active={pathname === '/search'}>
+            <NavLink href="/search">
+              <Search size={24} />
+              Search
+            </NavLink>
+          </NavItem>
+          <NavItem active={pathname === '/profile'}>
+            <NavLink href="/profile">
+              <User size={24} />
+              Profile
+            </NavLink>
           </NavItem>
         </NavList>
       </Navigation>

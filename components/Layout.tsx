@@ -54,7 +54,7 @@ export default function Layout({ children }: LayoutProps) {
     <LayoutContainer>
       <Header />
       <Sidebar />
-      <MainContent>
+      <MainContent id="main-content">
         <ContentArea>
           <MainSection>
             {children}

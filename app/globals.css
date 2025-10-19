@@ -76,3 +76,100 @@ body {
 .p-1 {
   padding: 10px;
 }
+
+/* Accessibility improvements */
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #1db954;
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #1db954;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #00ff00;
+    --color-background: #000000;
+    --color-text: #ffffff;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible for better keyboard navigation */
+.focus-visible:focus-visible {
+  outline: 2px solid #1db954;
+  outline-offset: 2px;
+}
+
+/* Button reset for accessibility */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Ensure interactive elements are keyboard accessible */
+[role="button"] {
+  cursor: pointer;
+}
+
+[role="button"]:focus {
+  outline: 2px solid #1db954;
+  outline-offset: 2px;
+}
+
+/* Improve text readability */
+p, li, span {
+  max-width: 65ch;
+}
+
+/* Ensure sufficient color contrast */
+a:focus,
+button:focus,
+[role="button"]:focus {
+  background-color: rgba(29, 185, 84, 0.1);
+}
