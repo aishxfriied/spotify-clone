@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <title>Spotify - Web Player: Music for everyone</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="hamburgerContainer">
+                <img width="40" class="invert hamburger" src="img/hamburger.svg" alt="">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                        stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                        stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-bar">
+                <img width="20" class="invert" src="img/home.svg" alt="home">
+                <input type="text" placeholder="What do you want to play?" class="search-input">
+                <img width="20" class="invert" src="img/search.svg" alt="search">
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-icons">
+                <img width="24" class="invert" src="img/volume.svg" alt="notifications">
+                <img width="24" class="invert" src="img/playlist.svg" alt="social">
+            </div>
+            <div class="user-profile">
+                <div class="profile-pic"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container flex bg-black">
+        <div class="left">
+            <div class="close">
+                <img width="30" class="invert" src="img/close.svg" alt="">
+            </div>
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo"><img width="110" class="invert" src="img/logo.svg" alt=""></div>
+                <ul>
+                    <li><img class="invert" src="img/home.svg" alt="home">Home</li>
+                    <li><img class="invert" src="img/search.svg" alt="home">Search</li>
+                </ul>
+            </div>
+
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading">
+                    <img class="invert" src="img/playlist.svg" alt="">
+                    <h2>
+                        Your Library
+                    </h2>
+                    <div class="library-actions">
+                        <img width="20" class="invert" src="img/playlist.svg" alt="expand">
+                    </div>
+                </div>
+
+                <div class="library-tabs">
+                    <button class="tab-btn active">Playlists</button>
+                    <button class="tab-btn">Podcasts</button>
+                    <button class="tab-btn">Albums</button>
+                    <button class="tab-btn">Artists</button>
+                    <button class="tab-btn">Events</button>
+                </div>
+
+                <div class="library-search">
+                    <img width="16" class="invert" src="img/search.svg" alt="search">
+                    <input type="text" placeholder="Search in Your Library" class="library-search-input">
+                </div>
+
+                <div class="recents-header">
+                    <span>Recents</span>
+                    <img width="16" class="invert" src="img/hamburger.svg" alt="menu">
+                </div>
+
+                <div class="songList">
+                    <ul>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-1"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">Death</div>
+                                <div class="playlist-type">Playlist • Aish</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-10"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">Khichkeee</div>
+                                <div class="playlist-type">Playlist • Aish</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-11"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">Retro</div>
+                                <div class="playlist-type">Playlist • Aish</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-2"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">Liked Songs</div>
+                                <div class="playlist-type">Playlist • 2,136 songs</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-3"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">Entergalactic</div>
+                                <div class="playlist-type">Album • Kid Cudi</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-4"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">The Simpsons</div>
+                                <div class="playlist-type">Album • Cheema Y</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-5"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">the frank ocean songs</div>
+                                <div class="playlist-type">Playlist • Aish</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-6"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">frank ocean best songs</div>
+                                <div class="playlist-type">Playlist • patriaaaaaaa</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-7"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">saddest frank ocean songs</div>
+                                <div class="playlist-type">Playlist • simranbat</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item">
+                            <div class="playlist-cover playlist-cover-8"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">Electric Club</div>
+                                <div class="playlist-type">Playlist • Oohftfinyre25gcuz4xjtf8ng</div>
+                            </div>
+                        </li>
+                        <li class="playlist-item current-playing">
+                            <div class="playlist-cover playlist-cover-9"></div>
+                            <div class="playlist-info">
+                                <div class="playlist-name">Hungama Ho Gaya (From "Queen") ✓</div>
+                                <div class="playlist-type">Asha Bhosle, Arijit Singh</div>
+                            </div>
+                            <div class="playing-indicator">♪</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="right bg-grey rounded">
+            <div class="main-content">
+                <div class="featured-section">
+                    <div class="featured-header">
+                        <span class="featured-label">Playlist</span>
+                        <button class="hide-announcements">Hide announcements</button>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-artwork">
+                            <div class="viral-100">the VIRAL 100</div>
+                        </div>
+                        <div class="featured-info">
+                            <h2>The Viral 100 🔥 Best Trending...</h2>
+                            <p>Listen Now for all the Viral Hits right here!</p>
+                            <div class="featured-actions">
+                                <button class="play-btn">Play</button>
+                                <button class="unfollow-btn">Unfollow</button>
+                                <img width="20" class="invert" src="img/hamburger.svg" alt="menu">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-tabs">
+                    <button class="content-tab active">All</button>
+                    <button class="content-tab">Music</button>
+                    <button class="content-tab">Podcasts</button>
+                    <button class="content-tab">Audiobooks</button>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-item">
+                        <div class="album-cover album-cover-1"></div>
+                        <span>Entergalactic</span>
+                    </div>
+                    <div class="content-item">
+                        <div class="album-cover album-cover-2"></div>
+                        <span>The Simpsons</span>
+                    </div>
+                    <div class="content-item">
+                        <div class="album-cover album-cover-3"></div>
+                        <span>channel ORANGE</span>
+                    </div>
+                    <div class="content-item">
+                        <div class="album-cover album-cover-4"></div>
+                        <span>AURA</span>
+                    </div>
+                    <div class="content-item">
+                        <div class="album-cover album-cover-5"></div>
+                        <span>the frank ocean songs</span>
+                    </div>
+                    <div class="content-item">
+                        <div class="album-cover album-cover-6"></div>
+                        <span>P-POP CULTURE</span>
+                    </div>
+                    <div class="content-item">
+                        <div class="album-cover album-cover-7"></div>
+                        <span>Blonde</span>
+                    </div>
+                    <div class="content-item">
+                        <div class="album-cover album-cover-8"></div>
+                        <span>Frank Ocean</span>
+                    </div>
+                </div>
+
+                <div class="made-for-section">
+                    <div class="made-for-header">
+                        <h3>Made For Aish</h3>
+                        <a href="#" class="show-all">Show all</a>
+                    </div>
+                    <div class="made-for-grid">
+                        <div class="made-for-item">
+                            <div class="recommendation-cover rec-cover-1"></div>
+                            <div class="spotify-logo">♪</div>
+                        </div>
+                        <div class="made-for-item">
+                            <div class="recommendation-cover rec-cover-2"></div>
+                            <div class="spotify-logo">♪</div>
+                        </div>
+                        <div class="made-for-item">
+                            <div class="recommendation-cover rec-cover-3"></div>
+                            <div class="spotify-logo">♪</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-sidebar">
+                <div class="current-song">
+                    <h3>Hungama Ho Gaya (From "Queen")</h3>
+                    <div class="song-poster">
+                        <div class="movie-poster"></div>
+                    </div>
+                    <div class="song-details">
+                        <h4>Hungama Ho Gaya (From "Queen") ✓</h4>
+                        <p>Asha Bhosle, Arijit Singh</p>
+                    </div>
+                    <div class="artist-info">
+                        <h5>About the artist</h5>
+                        <div class="artist-card">
+                            <div class="artist-pic artist-pic-asha"></div>
+                            <div class="artist-details">
+                                <h6>Asha Bhosle</h6>
+                                <p>12,728,751 monthly listeners</p>
+                                <button class="follow-btn">Follow</button>
+                                <p class="artist-desc">Sister of the most influential voice of India, Lata</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="playbar">
+            <div class="playbar-left">
+                <div class="current-song-cover"></div>
+                <div class="current-song-info">
+                    <div class="song-title">Hungama Ho Gaya (From "Queen")</div>
+                    <div class="song-artist">Asha Bhosle, Arijit Singh</div>
+                </div>
+            </div>
+            
+            <div class="playbar-center">
+                <div class="playback-controls">
+                    <img width="20" class="invert" src="img/prevsong.svg" alt="shuffle">
+                    <img width="20" class="invert" src="img/prevsong.svg" alt="previous">
+                    <div class="play-pause-btn">
+                        <img width="40" class="invert" src="img/play.svg" alt="play">
+                    </div>
+                    <img width="20" class="invert" src="img/nextsong.svg" alt="next">
+                    <img width="20" class="invert" src="img/nextsong.svg" alt="repeat">
+                </div>
+                <div class="progress-container">
+                    <span class="current-time">1:46</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <div class="progress-handle"></div>
+                    </div>
+                    <span class="total-time">4:32</span>
+                </div>
+            </div>
+
+            <div class="playbar-right">
+                <img width="20" class="invert" src="img/volume.svg" alt="volume">
+                <div class="volume-slider">
+                    <input type="range" min="0" max="100" value="50">
+                </div>
+                <img width="20" class="invert" src="img/playlist.svg" alt="queue">
+                <img width="20" class="invert" src="img/volume.svg" alt="device">
+                <img width="20" class="invert" src="img/playlist.svg" alt="lyrics">
+                <img width="20" class="invert" src="img/volume.svg" alt="fullscreen">
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
